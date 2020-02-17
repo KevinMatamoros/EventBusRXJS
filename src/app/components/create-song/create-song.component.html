@@ -1,0 +1,26 @@
+
+<h1>Add Song</h1>
+<div>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" class="container">
+    <div class="form-group">
+      <input class="form-control" formControlName="name" type="text" placeholder="Name">
+    </div>
+    <div class="form-group">
+      <input class="form-control" formControlName="artist" type="text" placeholder="Artist">
+    </div>
+    <button style="float: right;" [disabled]="!form.valid" type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+
+<input style="float: right;margin-right: 5px;" class="btn btn-primary" type="button" (click)="turnStore()" value="Turn ON/OFF Store">
+
+<div class="container">
+  <div class="row">
+    <div class="col-6">
+      <app-library></app-library>
+    </div>
+    <div class="col-6">
+      <app-store></app-store>
+    </div>
+  </div>
+</div>
